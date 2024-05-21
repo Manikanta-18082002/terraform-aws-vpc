@@ -18,7 +18,7 @@ output "private_subnet_cidrs" {
 }
 
 output "databse_subnet_cidrs" {
-    value =  aws_subnet.databse[*].id
+    value =  aws_subnet.database[*].id
 }
 
 output "database_subnet_group_id" {
