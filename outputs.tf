@@ -4,3 +4,24 @@
   
 # }
 #Outputs--> It prints the Information of the resources, this will be used in module development
+
+output "vpc_id" {
+    value = aws_vpc.main.id
+}
+
+output "public_subnet_ids" { #ids ? Plural
+    value = aws_subnet.public[*].id
+}
+
+output "private_subnet_cidrs" {
+    value =  aws_subnet.public[*].id
+}
+
+output "databse_subnet_cidrs" {
+    value =  aws_subnet.databse[*].id
+}
+
+output "database_subnet_group_id" {
+    value = aws_db_subnet_group.default.id
+  
+}
