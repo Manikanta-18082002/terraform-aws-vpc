@@ -142,6 +142,20 @@ resource "aws_route_table" "database" {
   )
 }
 
+resource "aws_db_subnet_group" "default" {
+  name       = "${local.resource_name}"
+  subnet_ids = aws_subnet.database[*].id # TO get all (2) the DB Subnet's ID
+
+  tags = merge(
+    var.common_tags,
+    var.database_subnet_group_tags,
+    {
+            Name = "${local.resource_name}"
+    }
+  )
+}
+
+
 # ---- Routes ---------
 resource "aws_route" "public" {
   route_table_id            = aws_route_table.public.id
@@ -181,3 +195,4 @@ resource "aws_route_table_association" "database" {
   route_table_id = aws_route_table.database.id
   
 }
+
