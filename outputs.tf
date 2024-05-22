@@ -5,6 +5,7 @@
 # }
 #Outputs--> It prints the Information of the resources, this will be used in module development
 
+# Below are the Minimum resources we display. We can output all resources
 output "vpc_id" {
     value = aws_vpc.main.id
 }

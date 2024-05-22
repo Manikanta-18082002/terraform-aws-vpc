@@ -142,9 +142,11 @@ resource "aws_route_table" "database" {
   )
 }
 
+# Creates in AWS RDS --> Subnet Groups (Left side)
+# For High Availability DB Subnet Group: --> All DB Subnet's we created (2) adding to the Group
 resource "aws_db_subnet_group" "default" {
   name       = "${local.resource_name}"
-  subnet_ids = aws_subnet.database[*].id # TO get all (2) the DB Subnet's ID
+  subnet_ids = aws_subnet.database[*].id # T0 get all (2) the DB Subnet's ID
 
   tags = merge(
     var.common_tags,

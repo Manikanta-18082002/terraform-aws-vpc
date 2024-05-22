@@ -116,7 +116,7 @@ variable "is_peering_required" {
  variable "acceptor_vpc_id" {
   type = string
   default = ""
-   
+
  }
 
  variable "vpc_peering_tags" {
