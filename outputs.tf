@@ -14,11 +14,11 @@ output "public_subnet_ids" { #ids ? Plural
     value = aws_subnet.public[*].id
 }
 
-output "private_subnet_cidrs" {
-    value =  aws_subnet.public[*].id
+output "private_subnet_ids" {
+    value =  aws_subnet.private[*].id
 }
 
-output "databse_subnet_cidrs" {
+output "databse_subnet_ids" {
     value =  aws_subnet.database[*].id
 }
 
